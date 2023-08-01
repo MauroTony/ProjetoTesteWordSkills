@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, inspect
+from sqlalchemy import Column, Integer, String, Boolean, inspect, Text
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -9,7 +9,7 @@ class Hotels(Base):
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(255), unique=True, index=True)
     sobre = Column(String(500))
-    img_principal_base64 = Column(String(500))
+    img_principal_base64 = Column(Text)
     localizacaoLat = Column(String(255))
     localizacaoLong = Column(String(255))
     is_active = Column(Boolean, default=True)
@@ -37,7 +37,7 @@ class GaleriaHotel(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     id_hotel = Column(Integer, index=True)
-    imagem_base64 = Column(String(500))
+    imagem_base64 = Column(Text)
 
 class Favoritos(Base):
     __tablename__ = "favoritos"
