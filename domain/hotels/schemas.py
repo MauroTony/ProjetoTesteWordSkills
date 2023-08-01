@@ -6,7 +6,7 @@ class HotelBase(BaseModel):
     sobre: Optional[str] = None
     localizacaoLat: Optional[str] = None
     localizacaoLong: Optional[str] = None
-    is_active: Optional[bool] = True
+    img_principal_base64: Optional[str] = True
 
     class Config:
         from_attributes = True
